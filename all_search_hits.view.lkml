@@ -42,6 +42,11 @@ view: all_search_hits {
     sql: ${TABLE}.target_name ;;
   }
 
+  dimension: file_name {
+    type: string
+    sql: ${TABLE}.file_name ;;
+  }
+
   measure: count {
     type: count
     drill_fields: [host_name, target_name]
