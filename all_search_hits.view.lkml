@@ -51,4 +51,9 @@ view: all_search_hits {
     type: count
     drill_fields: [host_name, target_name]
   }
+
+  measure: count_distinct {
+    type: count_distinct
+    drill_fields: [file_name, employee_id]
+  }
 }
