@@ -52,8 +52,14 @@ view: all_search_hits {
     drill_fields: [host_name, target_name]
   }
 
-  measure: count_distinct {
+  measure: number_of_unique_employees {
     type: count_distinct
-    drill_fields: [file_name, employee_id]
+    sql: ${TABLE}."Employee ID" ;;
   }
+
+  measure: number_of_unique_files {
+    type: count_distinct
+    sql: ${TABLE}.file_name ;;
+  }
+
 }
