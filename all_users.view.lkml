@@ -16,6 +16,22 @@ view: all_users {
     sql: ${TABLE}.HostName ;;
   }
 
+  dimension: FirstName {
+    type: string
+    sql: ${TABLE}.FirstName ;;
+  }
+
+  dimension: LastName {
+    type: string
+    sql: ${TABLE}.LastName ;;
+  }
+
+  dimension: FullName {
+    type: string
+    sql: ${TABLE}.FullName ;;
+  }
+
+
   measure: count {
     type: count
     drill_fields: [host_name]
