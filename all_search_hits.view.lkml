@@ -47,6 +47,28 @@ view: all_search_hits {
     sql: ${TABLE}.file_name ;;
   }
 
+  dimension: FirstName {
+    type: string
+    sql: ${TABLE}.FirstName ;;
+  }
+
+  dimension: LastName {
+    type: string
+    sql: ${TABLE}.LastName ;;
+  }
+
+  dimension: FullName {
+    type: string
+    sql: ${TABLE}.FullName ;;
+  }
+
+  dimension: FullName_And_ID {
+    type: string
+    sql: concat(${TABLE}.FullName," (" ,${TABLE}."Employee ID" ,")");;
+  }
+
+
+
   measure: count {
     type: count
     drill_fields: [host_name, target_name]
