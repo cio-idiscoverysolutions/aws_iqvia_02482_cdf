@@ -64,7 +64,7 @@ view: all_search_hits {
 
   dimension: FullName_And_ID {
     type: string
-    sql: ${TABLE}.FullName_And_ID
+    sql: ${TABLE}.FullName_And_ID ;;
   }
 
 
