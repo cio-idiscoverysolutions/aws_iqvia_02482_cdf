@@ -76,7 +76,7 @@ view: all_search_hits {
 
   measure: number_of_unique_employees {
     type: count_distinct
-    sql: ${TABLE}."Employee ID" ;;
+    sql: ${TABLE}.FullName_And_ID ;;
   }
 
   measure: number_of_unique_files {
