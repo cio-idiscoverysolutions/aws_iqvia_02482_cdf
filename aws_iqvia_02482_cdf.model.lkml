@@ -22,6 +22,8 @@ explore: all_search_hits_details_lp {}
 
 explore: all_users {}
 
+explore: ids_ditl_sample {}
+
 # - explore: cdf_catalog
 
 # - explore: cdf_convert
