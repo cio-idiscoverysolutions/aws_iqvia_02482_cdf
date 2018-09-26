@@ -1,8 +1,18 @@
 view: ids_ditl_sample {
   sql_table_name: dbo.ids_DITL_Sample ;;
 
-  dimension: acccess_date {
-    type: string
+  dimension_group: Acccess_Date {
+
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
     sql: ${TABLE}.Acccess_Date ;;
   }
 
