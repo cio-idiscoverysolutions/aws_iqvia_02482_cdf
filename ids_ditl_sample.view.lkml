@@ -70,4 +70,14 @@ view: ids_ditl_sample {
     type: count
     drill_fields: [name, target_name, cdf_table_name, filename]
   }
+
+  measure: number_of_unique_files {
+    type: count_distinct
+    sql: ${TABLE}.filename ;;
+  }
+
+  measure: number_of_unique_users {
+    type: count_distinct
+    sql: ${TABLE}.Name ;;
+  }
 }
