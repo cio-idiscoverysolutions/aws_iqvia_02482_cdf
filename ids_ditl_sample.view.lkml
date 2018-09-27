@@ -28,6 +28,7 @@ view: ids_ditl_sample {
   }
 
   dimension_group: date {
+    alias: [date_alias]
     type: time
     timeframes: [
       raw,
