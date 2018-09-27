@@ -94,4 +94,25 @@ view: ids_ditl_sample {
     convert_tz: no
   }
 
+  parameter: date_part {
+    type: unquoted
+    allowed_value: {
+      label: "Years"
+      value: "DAYOFYEAR"
+    }
+    allowed_value: {
+      label: "Weeks"
+      value: "DAYOFWEEK"
+    }
+    allowed_value: {
+      label: "Months"
+      value: "DAYOFMONTH"
+    }
+  }
+
+  dimension: dynamic_date {
+    type: date
+    sql: DATEADD(d, (-1 * {% parameter date_part %}(${TABLE}.Date) + 1), ${TABLE}.Date) ;;
+  }
+
 }
