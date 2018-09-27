@@ -121,7 +121,7 @@ view: ids_ditl_sample {
   dimension: dynamic_date {
     type: date
     sql: CASE
-            WHEN ${date_part} = "WEEKDAY" THEN DATENAME(WEEKDAY, ${TABLE}.Date))
+            WHEN {% parameter date_part %} = "WEEKDAY" THEN DATENAME(WEEKDAY, ${TABLE}.Date))
             ELSE DATEPART({% parameter date_part %},  ${TABLE}.Date)
           END;;
   }
