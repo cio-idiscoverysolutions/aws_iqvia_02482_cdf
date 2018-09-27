@@ -80,4 +80,17 @@ view: ids_ditl_sample {
     type: count_distinct
     sql: ${TABLE}.Name ;;
   }
+
+  measure: min_date {
+    type: date
+    sql: Min($)${date_date} ;;
+    convert_tz: no
+  }
+
+  measure: max_date {
+    type: date
+    sql: MAX($)${date_date} ;;
+    convert_tz: no
+  }
+
 }
