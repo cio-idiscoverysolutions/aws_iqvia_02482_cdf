@@ -98,21 +98,32 @@ view: ids_ditl_sample {
     type: unquoted
     allowed_value: {
       label: "Years"
-      value: "DAYOFYEAR"
+      value: "YEAR"
     }
     allowed_value: {
       label: "Weeks"
-      value: "DAYOFWEEK"
+      value: "WK"
     }
     allowed_value: {
       label: "Months"
-      value: "DAYOFMONTH"
+      value: "MONTH"
+    }
+    allowed_value: {
+      label: "HOUR"
+      value: "HH"
+    }
+    allowed_value: {
+      label: "WEEKDAY"
+      value: "DW"
     }
   }
 
   dimension: dynamic_date {
     type: date
-    sql: DATEADD(d, (-1 * {% parameter date_part %}(${TABLE}.Date) + 1), ${TABLE}.Date) ;;
+    sql: CASE
+            WHEN ${date_part} = "WEEKDAY" THEN DATENAME(WEEKDAY, ${TABLE}.Date))
+            ELSE DATEPART({% parameter date_part %},  ${TABLE}.Date)
+          END;;
   }
 
 }
