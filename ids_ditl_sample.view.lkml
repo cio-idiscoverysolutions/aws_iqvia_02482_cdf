@@ -1,19 +1,9 @@
 view: ids_ditl_sample {
   sql_table_name: dbo.ids_DITL_Sample ;;
 
-  dimension_group: Acccess_Date {
-
-    type: time
-    timeframes: [
-      raw,
-      time,
-      date,
-      week,
-      month,
-      quarter,
-      year
-    ]
-    sql: ${TABLE}.Acccess_Date ;;
+  dimension: access_type {
+    type: string
+    sql: ${TABLE}.AccessType ;;
   }
 
   dimension: cdf_table_name {
@@ -24,11 +14,6 @@ view: ids_ditl_sample {
   dimension: comments {
     type: string
     sql: ${TABLE}.Comments ;;
-  }
-
-  dimension: create_date {
-    type: string
-    sql: ${TABLE}.Create_Date ;;
   }
 
   dimension: csvrowid {
@@ -42,6 +27,20 @@ view: ids_ditl_sample {
     sql: ${TABLE}.Data_Source ;;
   }
 
+  dimension_group: date {
+    type: time
+    timeframes: [
+      raw,
+      time,
+      date,
+      week,
+      month,
+      quarter,
+      year
+    ]
+    sql: ${TABLE}.Date ;;
+  }
+
   dimension: employee_id {
     type: string
     sql: ${TABLE}.EmployeeID ;;
@@ -50,11 +49,6 @@ view: ids_ditl_sample {
   dimension: filename {
     type: string
     sql: ${TABLE}.FILENAME ;;
-  }
-
-  dimension: modify_date {
-    type: string
-    sql: ${TABLE}.Modify_Date ;;
   }
 
   dimension: name {
