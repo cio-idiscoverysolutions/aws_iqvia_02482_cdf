@@ -95,7 +95,7 @@ view: ids_ditl_sample {
   }
 
   parameter: date_part {
-    type: unquoted
+    type: string
     allowed_value: {
       label: "Years"
       value: "DAYOFYEAR"
